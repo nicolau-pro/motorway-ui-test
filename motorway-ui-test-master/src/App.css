@@ -42,6 +42,10 @@ form input[type='date'] {
   color: #f9c80e;
 }
 
+form input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(70%);
+}
+
 form input[type='range'] {
   margin: -0.5em 0;
 }

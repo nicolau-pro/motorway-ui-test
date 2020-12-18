@@ -32,6 +32,10 @@ form {
   input {
     &[type='date'] {
       color: $color-info;
+
+      &::-webkit-calendar-picker-indicator {
+        filter: invert(70%);
+      }
     }
 
     &[type='range'] {
