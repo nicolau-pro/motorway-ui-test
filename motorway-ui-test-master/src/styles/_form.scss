@@ -9,7 +9,7 @@ form {
     background-color: $color-fill;
     border: 1px solid $color-glow;
     border-radius: 5px;
-    color: $color-light;
+    color: $color-info;
     cursor: pointer;
     font-family: $font-secondary;
     font-weight: 200;
@@ -30,6 +30,10 @@ form {
   }
 
   input {
+    &[type='date'] {
+      color: $color-info;
+    }
+
     &[type='range'] {
       margin: -0.5em 0;
 
@@ -71,11 +75,21 @@ form {
 
     &.valid {
       color: $color-valid;
+
+      select {
+        color: $color-light;
+      }
+
+      input {
+        color: $color-light;
+      }
     }
   }
 
   select,
   option {
+    color: $color-info;
+
     &[disabled] {
       background-color: $color-light;
     }

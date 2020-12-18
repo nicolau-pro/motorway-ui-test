@@ -13,7 +13,7 @@ form select {
   background-color: #023788;
   border: 1px solid #7500fd;
   border-radius: 5px;
-  color: #fff;
+  color: #f9c80e;
   cursor: pointer;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 200;
@@ -36,6 +36,10 @@ form input:focus,
 form select:focus {
   box-shadow: 0 0 18px #f6019d;
   outline: none;
+}
+
+form input[type='date'] {
+  color: #f9c80e;
 }
 
 form input[type='range'] {
@@ -81,6 +85,19 @@ form label {
 
 form label.valid {
   color: #2de2e6;
+}
+
+form label.valid select {
+  color: #fff;
+}
+
+form label.valid input {
+  color: #fff;
+}
+
+form select,
+form option {
+  color: #f9c80e;
 }
 
 form select[disabled],
