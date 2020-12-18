@@ -91,7 +91,7 @@ export class Form extends Component {
           Favourite colour:
           <select name='colour' className={this.state.colour.value} onChange={this.handleChangeColour}>
             <option disabled selected value>
-              -- pick a color --
+              -- pick a colour --
             </option>
             <option value='yellow' className='yellow'></option>
             <option value='orange' className='orange'></option>
