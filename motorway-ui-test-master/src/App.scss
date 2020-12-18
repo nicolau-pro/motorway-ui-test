@@ -9,6 +9,7 @@
 body {
   background: linear-gradient(to bottom, $color-background, $color-glow-dark);
   background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -39,17 +40,21 @@ section {
 
   &.form {
     background: transparentize($color-background, 0.1);
+    filter: drop-shadow(0 0 150px transparentize($color-fill, 0.7));
     padding: 3em;
     width: 460px;
   }
 
   &.gallery {
     width: 100%;
+    user-select: none;
   }
 }
 
 .blur {
-  filter: blur(20px);
+  @media (min-width: $break-large) {
+    filter: blur(10px);
+  }
 }
 
 h1,

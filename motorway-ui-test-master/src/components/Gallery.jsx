@@ -17,6 +17,12 @@ export class Gallery extends Component {
     this.setState({ overlay: null });
   };
 
+  handleCloseZoom = (event) => {
+    event.stopPropagation();
+    alert('Zoom would open image in a new tab');
+    // window.open('/car-images/' + this.state.overlay, '_blank');
+  };
+
   render() {
     const images = this.props.images;
 
@@ -32,10 +38,7 @@ export class Gallery extends Component {
                     className='car'
                     id={img.id}
                     style={{
-                      backgroundImage: 'url(' + img.url + ')',
-                      backgroundPosition: 'center',
-                      backgroundSize: 'cover',
-                      backgroundRepeat: 'no-repeat',
+                      backgroundImage: 'url(' + img.url + '.small)',
                     }}
                     onClick={this.handleViewImage}>
                     <img className='hero' src={img.user.profile_image} alt={img.alt_description} />
@@ -45,7 +48,15 @@ export class Gallery extends Component {
           </ul>
 
           <div className={'overlay' + (this.state.overlay ? ' open' : '')} onClick={this.handleCloseOverlay}>
+            <div className='loading'>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
             {images && this.state.overlay && <img src={'/car-images/' + this.state.overlay} alt={images[0].alt_description} />}
+            <div className='zoom' onClick={this.handleCloseZoom}></div>
           </div>
         </section>
         <section className={'form' + (this.state.overlay ? ' blur' : '')}>

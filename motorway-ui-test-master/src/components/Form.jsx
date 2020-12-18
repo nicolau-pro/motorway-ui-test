@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 export class Form extends Component {
   state = {
-    // name: { value: 'Radu', valid: true },
-    // email: { value: 'radu.alex.nicolau@gmail.com', valid: true },
-    // dob: { min: '1900-01-01', max: '2020-12-21', value: '1982-04-20', valid: true },
-    // colour: { value: null, valid: false },
-    // salary: { min: 20000, max: 100000, value: 85000, valid: true },
     name: { value: '', valid: false },
     email: { value: '', valid: false },
     dob: { min: '1900-01-01', max: '2020-12-21', value: '2020-01-01', valid: false },
-    colour: { value: 'C', valid: false },
+    colour: { value: '', valid: false },
     salary: { min: 20000, max: 100000, value: 33000, valid: false },
+    // name: { value: 'Radu', valid: true },
+    // email: { value: 'radu.alex.nicolau@gmail.com', valid: true },
+    // dob: { min: '1900-01-01', max: '2020-12-21', value: '1982-04-20', valid: true },
+    // colour: { value: 'purple', valid: true },
+    // salary: { min: 20000, max: 100000, value: 85000, valid: true },
   };
 
   componentDidMount() {
@@ -57,7 +57,9 @@ export class Form extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.clear();
-    console.table(Object.fromEntries(Object.entries(this.state).map((entry) => [entry[0], entry[1].value || entry[1]])));
+    let message = Object.fromEntries(Object.entries(this.state).map((entry) => [entry[0], entry[1].value || entry[1]]));
+    console.table(message);
+    alert('SUBMITTED:' + Object.entries(message).map((entry) => '\n' + entry[0] + ': ' + entry[1]));
   };
 
   render() {

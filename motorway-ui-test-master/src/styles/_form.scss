@@ -19,6 +19,10 @@ form {
       padding: 1em;
     }
 
+    &::placeholder {
+      color: $color-info;
+    }
+
     &:focus {
       box-shadow: 0 0 18px $color-error;
       outline: none;
@@ -44,7 +48,7 @@ form {
       padding: 1em;
 
       &[disabled] {
-        background-color: $color-background;
+        background-color: $color-dark;
         box-shadow: none;
         color: $color-warning;
         opacity: 0.5;
