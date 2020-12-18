@@ -13,6 +13,11 @@
     padding: calc(2vw + 2vh);
     width: 400px;
 
+    @media (max-width: $break-medium) {
+      height: 300px;
+      width: 300px;
+    }
+
     .hero {
       background: $color-info;
       border-radius: 999px;
@@ -122,6 +127,12 @@
     right: $overlay-cta / 2;
     top: $overlay-cta;
     width: $overlay-cta;
+
+    @media (max-width: $break-small) {
+      right: $mobile-cta * $overlay-cta / 2;
+      top: $mobile-cta * $overlay-cta;
+      width: $mobile-cta * $overlay-cta;
+    }
   }
 
   &::before {
@@ -163,6 +174,19 @@
     &:hover {
       background: $color-glow;
       box-shadow: 0 0 $zoom-cta / 2 $color-glow;
+    }
+
+    @media (max-width: $break-small) {
+      height: $mobile-cta * $zoom-cta;
+      margin-top: $mobile-cta * -$zoom-cta * 1.3;
+      width: $mobile-cta * $zoom-cta;
+
+      &::before,
+      &::after {
+        margin-left: $mobile-cta * $zoom-cta * 0.2;
+        margin-top: $mobile-cta * $zoom-cta / 2;
+        width: $mobile-cta * $zoom-cta * 0.6;
+      }
     }
   }
 

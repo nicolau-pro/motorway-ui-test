@@ -134,6 +134,13 @@ form * {
   width: 400px;
 }
 
+@media (max-width: 768px) {
+  .display li {
+    height: 300px;
+    width: 300px;
+  }
+}
+
 .display li .hero {
   background: #f9c80e;
   border-radius: 999px;
@@ -242,6 +249,14 @@ form * {
   width: 60px;
 }
 
+@media (max-width: 544px) {
+  .overlay::before, .overlay::after {
+    right: 18px;
+    top: 36px;
+    width: 36px;
+  }
+}
+
 .overlay::before {
   transform: rotate(45deg);
 }
@@ -281,6 +296,19 @@ form * {
 .overlay .zoom:hover {
   background: #7500fd;
   box-shadow: 0 0 40px #7500fd;
+}
+
+@media (max-width: 544px) {
+  .overlay .zoom {
+    height: 48px;
+    margin-top: -62.4px;
+    width: 48px;
+  }
+  .overlay .zoom::before, .overlay .zoom::after {
+    margin-left: 9.6px;
+    margin-top: 24px;
+    width: 28.8px;
+  }
 }
 
 .overlay > img {
