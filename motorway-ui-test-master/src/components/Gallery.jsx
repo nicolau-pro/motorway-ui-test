@@ -19,8 +19,7 @@ export class Gallery extends Component {
 
   handleCloseZoom = (event) => {
     event.stopPropagation();
-    alert('Zoom would open image in a new tab');
-    // window.open('/car-images/' + this.state.overlay, '_blank');
+    window.open('https://www.r5.ro/Motorway/car-images/' + this.state.overlay + '.jpg', '_blank');
   };
 
   render() {
